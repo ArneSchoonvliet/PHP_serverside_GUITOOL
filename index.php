@@ -24,7 +24,6 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
     // check for tag type
     if ($tag == 'login') {
         // Request type is check Login
-		echo "Ik ben hier";
         $email = $_POST['email'];
         $password = $_POST['password'];
 
@@ -86,12 +85,4 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 }
 ?>
 
-<html>
-<head></head>
-<body>
-	<form action="" method="POST">
-		<input type="text" name="tag">Tag
-		<input type="submit" value="Submit">
-	</form>
-</body>
-</html>
+
