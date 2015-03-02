@@ -82,6 +82,14 @@ class DB_Functions {
 		$result = mysql_query("DELETE FROM users WHERE uid = '$uid'");
 		return true;
 	}
+	
+	public function updateUser($email, $password, $uid){
+		$hash = $this->hashSSHA($password);
+        $encrypted_password = $hash["encrypted"]; // encrypted password
+        $salt = $hash["salt"]; // salt
+		$result = mysql_query("UPDATE users SET email = '$email', password = '$encrypted_password', salt='$salt WHERE uid = '$uid'");
+		return true;
+	}
 
     /**
      * Encrypting password

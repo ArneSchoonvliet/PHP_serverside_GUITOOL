@@ -83,7 +83,15 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
     	$uid= $_POST['uid'];
     	$user = $db->deleteUser($uid);
 		echo "I'm gone forever";
-    }else {
+    }else if($tag == 'update'){
+    	$uid= $_POST['uid'];
+		$email= $_POST['email'];
+		$password= $_POST['password'];
+		
+		$user = $db->updateUser($email, $password, $uid);
+		echo "updated me :D";
+	}
+    else {
         echo "Invalid Request";
     }
 } else {
@@ -99,6 +107,8 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 		<form action="" method="POST">
 			<input type='text' name="tag"/>
 			<input type="text" name="uid" />
+			<input type="text" name="email" />
+			<input type="text" name="password" />
 			<input type='submit' value="Submit" />
 		</form>
 	</body>
