@@ -84,10 +84,11 @@ class DB_Functions {
 	}
 	
 	public function updateUser($email, $password, $uid){
+		
 		$hash = $this->hashSSHA($password);
         $encrypted_password = $hash["encrypted"]; // encrypted password
         $salt = $hash["salt"]; // salt
-		$result = mysql_query("UPDATE users SET email = '$email', password = '$encrypted_password', salt='$salt WHERE uid = '$uid'");
+		$result = mysql_query("UPDATE users SET email = '$email', password = '$encrypted_password', salt='$salt' WHERE uid = '$uid'");
 		return true;
 	}
 
