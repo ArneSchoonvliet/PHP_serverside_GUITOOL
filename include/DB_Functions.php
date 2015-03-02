@@ -77,6 +77,11 @@ class DB_Functions {
             return false;
         }
     }
+	
+	public function deleteUser($uid){
+		$result = mysql_query("DELETE FROM users WHERE uid = '$uid'");
+		return true;
+	}
 
     /**
      * Encrypting password

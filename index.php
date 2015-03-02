@@ -77,7 +77,11 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
                 echo json_encode($response);
             }
         }
-    } else {
+    }
+    else if($tag == 'delete'){
+    	$user = $db->deleteUser($uid);
+		echo "I'm gone forever";
+    }else {
         echo "Invalid Request";
     }
 } else {
@@ -85,4 +89,15 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 }
 ?>
 
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<form action="">
+			<input type='text' value='tag' />
+			<input type='submit' value="Submit" />
+		</form>
+	</body>
+</html>
 
