@@ -13,6 +13,7 @@
 if (isset($_POST['tag']) && $_POST['tag'] != '') {
     // get tag
     $tag = $_POST['tag'];
+	
 
     // include db handler
     require_once 'include/DB_Functions.php';
@@ -79,6 +80,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
         }
     }
     else if($tag == 'delete'){
+    	$uid= $_POST['uid'];
     	$user = $db->deleteUser($uid);
 		echo "I'm gone forever";
     }else {
@@ -96,6 +98,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 	<body>
 		<form action="" method="POST">
 			<input type='text' name="tag"/>
+			<input type="text" name="uid" />
 			<input type='submit' value="Submit" />
 		</form>
 	</body>
