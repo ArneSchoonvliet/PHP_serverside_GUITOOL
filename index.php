@@ -95,7 +95,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 	</head>
 	<body>
 		<form action="">
-			<input type='text' value='tag' />
+			<input type='text' value='' />
 			<input type='submit' value="Submit" />
 		</form>
 	</body>
