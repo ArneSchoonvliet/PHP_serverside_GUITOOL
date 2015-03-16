@@ -22,12 +22,11 @@ class DB_Functions {
      * Storing new user
      * returns user details
      */
-    public function storeUser($name, $email, $password) {
-        $uuid = uniqid('', true);
+    public function storeUser($name, $password) {
         $hash = $this->hashSSHA($password);
         $encrypted_password = $hash["encrypted"]; // encrypted password
         $salt = $hash["salt"]; // salt
-        $result = mysql_query("INSERT INTO users(unique_id, name, email, encrypted_password, salt, created_at) VALUES('$uuid', '$name', '$email', '$encrypted_password', '$salt', NOW())");
+        $result = mysql_query("INSERT INTO users(name, encrypted_password, salt, created_at) VALUES('$name', '$encrypted_password', '$salt', NOW())");
         // check for successful store
         if ($result) {
             // get user details 
@@ -41,10 +40,10 @@ class DB_Functions {
     }
 
     /**
-     * Get user by email and password
+     * Get user by name and password
      */
-    public function getUserByEmailAndPassword($email, $password) {
-        $result = mysql_query("SELECT * FROM users WHERE email = '$email'") or die(mysql_error());
+    public function getUserByNameAndPassword($name, $password) {
+        $result = mysql_query("SELECT * FROM users WHERE name = '$name'") or die(mysql_error());
         // check for result 
         $no_of_rows = mysql_num_rows($result);
         if ($no_of_rows > 0) {
@@ -66,8 +65,8 @@ class DB_Functions {
     /**
      * Check user is existed or not
      */
-    public function isUserExisted($email) {
-        $result = mysql_query("SELECT email from users WHERE email = '$email'");
+    public function isUserExisted($name) {
+        $result = mysql_query("SELECT name from users WHERE name = '$name'");
         $no_of_rows = mysql_num_rows($result);
         if ($no_of_rows > 0) {
             // user existed 
@@ -83,12 +82,12 @@ class DB_Functions {
 		return true;
 	}
 	
-	public function updateUser($email, $password, $uid){
+	public function updateUser($name, $password, $uid){
 		
 		$hash = $this->hashSSHA($password);
         $encrypted_password = $hash["encrypted"]; // encrypted password
         $salt = $hash["salt"]; // salt
-		$result = mysql_query("UPDATE users SET email = '$email', encrypted_password = '$encrypted_password', salt='$salt' WHERE uid = '$uid'");
+		$result = mysql_query("UPDATE users SET name = '$name', encrypted_password = '$encrypted_password', salt='$salt' WHERE uid = '$uid'");
 		return true;
 	}
 

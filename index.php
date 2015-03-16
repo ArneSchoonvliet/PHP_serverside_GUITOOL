@@ -25,18 +25,17 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
     // check for tag type
     if ($tag == 'login') {
         // Request type is check Login
-        $email = $_POST['email'];
+        $name = $_POST['name'];
         $password = $_POST['password'];
 
         // check for user
-        $user = $db->getUserByEmailAndPassword($email, $password);
+        $user = $db->getUserByNameAndPassword($name, $password);
         if ($user != false) {
             // user found
             // echo json with success = 1
             $response["success"] = 1;
             $response["uid"] = $user["unique_id"];
             $response["user"]["name"] = $user["name"];
-            $response["user"]["email"] = $user["email"];
             $response["user"]["created_at"] = $user["created_at"];
             $response["user"]["updated_at"] = $user["updated_at"];
             echo json_encode($response);
@@ -44,30 +43,28 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             // user not found
             // echo json with error = 1
             $response["error"] = 1;
-            $response["error_msg"] = "Incorrect email or password!";
+            $response["error_msg"] = "Incorrect name or password!";
             echo json_encode($response);
         }
     } else if ($tag == 'register') {
         // Request type is Register new user
         $name = $_POST['name'];
-        $email = $_POST['email'];
         $password = $_POST['password'];
 
         // check if user is already existed
-        if ($db->isUserExisted($email)) {
+        if ($db->isUserExisted($name)) {
             // user is already existed - error response
             $response["error"] = 2;
             $response["error_msg"] = "User already existed";
             echo json_encode($response);
         } else {
             // store user
-            $user = $db->storeUser($name, $email, $password);
+            $user = $db->storeUser($name, $password);
             if ($user) {
                 // user stored successfully
                 $response["success"] = 1;
                 $response["uid"] = $user["unique_id"];
                 $response["user"]["name"] = $user["name"];
-                $response["user"]["email"] = $user["email"];
                 $response["user"]["created_at"] = $user["created_at"];
                 $response["user"]["updated_at"] = $user["updated_at"];
                 echo json_encode($response);
@@ -83,12 +80,13 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
     	$uid= $_POST['uid'];
     	$user = $db->deleteUser($uid);
 		echo "I'm gone forever";
-    }else if($tag == 'update'){
+    }
+    else if($tag == 'update'){
     	$uid= $_POST['uid'];
-		$email= $_POST['email'];
+		$name= $_POST['name'];
 		$password= $_POST['password'];
 		
-		$user = $db->updateUser($email, $password, $uid);
+		$user = $db->updateUser($name, $password, $uid);
 		echo "updated me :D";
 	}
     else {
@@ -107,7 +105,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 		<form action="" method="POST">
 			<input type='text' name="tag"/>
 			<input type="text" name="uid" />
-			<input type="text" name="email" />
+			<input type="text" name="name" />
 			<input type="text" name="password" />
 			<input type='submit' value="Submit" />
 		</form>
