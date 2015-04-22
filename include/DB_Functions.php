@@ -75,7 +75,7 @@ class DB_Functions {
 			$arr = array();
 			$tel = 0;
 			$arr[$tel]="hallo";
-			$tel++;
+			//$tel++;
 			while ($line = mysql_fetch_array($result))
 			{
 				print $line;
