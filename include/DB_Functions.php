@@ -62,6 +62,21 @@ class DB_Functions {
         }
     }
 
+    //When logged in get session data of user.
+    public function getUserSessionDataFromId($uid)
+    {
+    	$result = mysql_query("SELECT * FROM session WHERE uid = '$uid'");
+		$no_of_rows = mysql_num_rows($result);
+		if($no_of_rows > 0)
+		{
+			$result = mysql_fetch_array($result);
+			return $result;
+		}
+		else{
+			//no session data of user
+			return false;
+		}
+    }
     /**
      * Check user is existed or not
      */

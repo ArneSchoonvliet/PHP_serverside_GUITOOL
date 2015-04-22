@@ -34,10 +34,21 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             // user found
             // echo json with success = 1
             $response["success"] = 1;
-            $response["uid"] = $user["unique_id"];
+            $response["uid"] = $user["uid"];
             $response["user"]["name"] = $user["name"];
             $response["user"]["created_at"] = $user["created_at"];
             $response["user"]["updated_at"] = $user["updated_at"];
+			
+			$session = $db->getUserSessionDataFromId($user["uid"]);
+			if($session != false){
+				$response["session"]["sid"] = $session["sid"];
+				$response["session"]["place"] = $session["place"];
+				$response["session"]["description"] = $session["description"];
+				$response["session"]["datum"] = $session["datum"];
+				$response["session"]["altitude"] = $session["altitude"];
+				$response["session"]["duration"] = $session["duration"];
+				
+			}
             echo json_encode($response);
         } else {
             // user not found
@@ -89,6 +100,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 		$user = $db->updateUser($name, $password, $uid);
 		echo "updated me :D";
 	}
+	
     else {
         echo "Invalid Request";
     }
