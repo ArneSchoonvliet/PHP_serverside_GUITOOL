@@ -39,7 +39,9 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             $response["user"]["created_at"] = $user["created_at"];
             $response["user"]["updated_at"] = $user["updated_at"];
 			
-			$session = $db->getUserSessionDataFromId($user["uid"]);
+			print $db->getUserSessionDataFromId($user["uid"]);
+			/*$session = $db->getUserSessionDataFromId($user["uid"]);
+			
 			if($session != false){
 				$response["session"]["sid"] = $session["sid"];
 				$response["session"]["place"] = $session["place"];
@@ -56,7 +58,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             $response["error"] = 1;
             $response["error_msg"] = "Incorrect name or password!";
             echo json_encode($response);
-        }
+        }*/
     } else if ($tag == 'register') {
         // Request type is Register new user
         $name = $_POST['name'];

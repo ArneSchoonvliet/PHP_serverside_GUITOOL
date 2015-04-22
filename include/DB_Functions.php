@@ -66,11 +66,20 @@ class DB_Functions {
     public function getUserSessionDataFromId($uid)
     {
     	$result = mysql_query("SELECT * FROM session WHERE uid = '$uid'");
+		
 		$no_of_rows = mysql_num_rows($result);
 		if($no_of_rows > 0)
 		{
-			$result = mysql_fetch_array($result);
-			return $result;
+//			$result = mysql_fetch_array($result);
+			
+			$arr = array();
+			$tel = 0;
+			while ($line = mysql_fetch_array($result))
+			{
+				$arr[$tel]=$line;
+				$tel++;
+			}
+			return json_encode($arr);//$result;
 		}
 		else{
 			//no session data of user
