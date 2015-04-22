@@ -78,7 +78,9 @@ class DB_Functions {
 			//$tel++;
 			while ($line = mysql_fetch_array($result))
 			{
-				print $line;
+				print $line[0];
+				print $line[1];
+				print $line[2];
 				$arr[$tel]=$line;
 				$tel++;
 			}
