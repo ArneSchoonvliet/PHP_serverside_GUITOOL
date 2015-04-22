@@ -41,7 +41,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             $response["user"]["created_at"] = $user["created_at"];
             $response["user"]["updated_at"] = $user["updated_at"];
 			
-			print $db->getUserSessionDataFromId($user["uid"]);
+		 $db->getUserSessionDataFromId($user["uid"]);
 			/*$session = $db->getUserSessionDataFromId($user["uid"]);
 			
 			if($session != false){
