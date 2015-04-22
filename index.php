@@ -1,5 +1,5 @@
 <?php
-
+echo "test";
 /**
  * File to handle all API requests
  * Accepts GET and POST
