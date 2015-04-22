@@ -11,7 +11,7 @@ echo "test";
  * check for POST request 
  */
  
- /*
+ 
 if (isset($_POST['tag']) && $_POST['tag'] != '') {
     // get tag
     $tag = $_POST['tag'];
@@ -61,7 +61,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             $response["error_msg"] = "Incorrect name or password!";
             echo json_encode($response);
         }*/
-    /*} 
+    } 
     else if ($tag == 'register') {
         // Request type is Register new user
         $name = $_POST['name'];
@@ -111,7 +111,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
     }
 } else {
     echo "Access Denied";
-}*/
+}
 ?>
 
 <html>
