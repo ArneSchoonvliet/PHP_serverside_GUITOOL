@@ -53,14 +53,14 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 				$response["session"]["duration"] = $session["duration"];
 				
 			}
-            echo json_encode($response);
+            echo json_encode($response);*/
         } else {
             // user not found
             // echo json with error = 1
             $response["error"] = 1;
             $response["error_msg"] = "Incorrect name or password!";
             echo json_encode($response);
-        }*/
+        }
     } 
     else if ($tag == 'register') {
         // Request type is Register new user
