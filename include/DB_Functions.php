@@ -74,7 +74,7 @@ class DB_Functions {
 			
 			$arr = array();
 			$tel = 0;
-			$arr[$tel]="hallo";
+			//$arr[$tel]="hallo";
 			$tel++;
 			while ($line = mysql_fetch_array($result))
 			{
@@ -82,10 +82,6 @@ class DB_Functions {
 				$arr[$tel]=$line;
 				$tel++;
 			}
-			print $arr[0];
-			print $arr[1];
-				print $arr[2];
-				print $arr[3];
 			return json_encode($arr);//$result;
 		}
 		else{
