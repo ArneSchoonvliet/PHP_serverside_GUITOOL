@@ -82,7 +82,7 @@ class DB_Functions {
 				$arr[$tel]=$line;
 				$tel++;
 			}
-			echo $arr;
+			print $arr[0];
 			return json_encode($arr);//$result;
 		}
 		else{
