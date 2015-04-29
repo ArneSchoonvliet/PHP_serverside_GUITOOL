@@ -75,15 +75,16 @@ class DB_Functions {
 			$arr = array();
 			$tel = 0;
 			$arr[$tel]="hallo";
-			//$tel++;
+			$tel++;
 			while ($line = mysql_fetch_array($result))
 			{
-				print $line[0];
-				print $line[1];
-				print $line[2];
+				
 				$arr[$tel]=$line;
 				$tel++;
 			}
+			print $line[0];
+				print $line[1];
+				print $line[2];
 			return json_encode($arr);//$result;
 		}
 		else{
