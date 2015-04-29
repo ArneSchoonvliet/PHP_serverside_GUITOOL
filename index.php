@@ -47,12 +47,12 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 			if($session != false){
 				for ($i=0; $i < count($session); $i++) {
 					print $i; 
-				$response["session"]["sid"] = $session[$i]["sid"];
-				$response["session"]["place"] = $session[$i]["place"];
-				$response["session"]["description"] = $session[$i]["description"];
-				$response["session"]["datum"] = $session[$i]["datum"];
-				$response["session"]["altitude"] = $session[$i]["altitude"];
-				$response["session"]["duration"] = $session[$i]["duration"];
+				$response["session" + $i]["sid"] = $session[$i]["sid"];
+				$response["session" + $i]["place"] = $session[$i]["place"];
+				$response["session" + $i]["description"] = $session[$i]["description"];
+				$response["session" + $i]["datum"] = $session[$i]["datum"];
+				$response["session" + $i]["altitude"] = $session[$i]["altitude"];
+				$response["session" + $i]["duration"] = $session[$i]["duration"];
 				}
 				
 				
