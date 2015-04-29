@@ -87,7 +87,7 @@ class DB_Functions {
 			print $arr[1][1];
 			print $arr[1][2];
 			
-			return $arr;//$result;
+			return $arr;      //$result;
 		}
 		else{
 			//no session data of user
