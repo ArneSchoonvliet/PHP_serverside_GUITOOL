@@ -45,12 +45,16 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 			$session = $db->getUserSessionDataFromId($user["uid"]);
 			print $session;
 			if($session != false){
-				$response["session"]["sid"] = $session[1]["sid"];
-				/*$response["session"]["place"] = $session["place"];
-				$response["session"]["description"] = $session["description"];
-				$response["session"]["datum"] = $session["datum"];
-				$response["session"]["altitude"] = $session["altitude"];
-				$response["session"]["duration"] = $session["duration"];*/
+				for ($i=0; $i < count($session); $i++) { 
+				$response["session"]["sid"] = $session[$i]["sid"];
+				$response["session"]["place"] = $session[$i]["place"];
+				$response["session"]["description"] = $session[$i]["description"];
+				$response["session"]["datum"] = $session[$i]["datum"];
+				$response["session"]["altitude"] = $session[$i]["altitude"];
+				$response["session"]["duration"] = $session[$i]["duration"];
+				}
+				
+				
 				
 			}
             echo json_encode($response);
