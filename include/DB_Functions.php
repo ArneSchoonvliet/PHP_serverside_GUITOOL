@@ -85,7 +85,6 @@ class DB_Functions {
 			
 			
 			return $arr;
-			//return json_encode($arr);//$result;
 		}
 		else{
 			//no session data of user
