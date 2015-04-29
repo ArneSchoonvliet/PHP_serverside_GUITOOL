@@ -42,37 +42,22 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             $response["user"]["updated_at"] = $user["updated_at"];
 			
 		 //$db->getUserSessionDataFromId($user["uid"]);
-			/*$session = $db->getUserSessionDataFromId($user["uid"]);
+			$session = $db->getUserSessionDataFromId($user["uid"]);
 			print count($session);
 			if($session != false){
 				for ($i=0; $i < count($session); $i++) {
 					print $i; 
-				$response["session" + $i]["sid"] = $session[$i]["sid"];
-				$response["session" + $i]["place"] = $session[$i]["place"];
-				$response["session" + $i]["description"] = $session[$i]["description"];
-				$response["session" + $i]["datum"] = $session[$i]["datum"];
-				$response["session" + $i]["altitude"] = $session[$i]["altitude"];
-				$response["session" + $i]["duration"] = $session[$i]["duration"];
+				$response["session"][$i]["sid"] = $session[$i]["sid"];
+				$response["session"][$i]["place"] = $session[$i]["place"];
+				$response["session"][$i]["description"] = $session[$i]["description"];
+				$response["session"][$i]["datum"] = $session[$i]["datum"];
+				$response["session"][$i]["altitude"] = $session[$i]["altitude"];
+				$response["session"][$i]["duration"] = $session[$i]["duration"];
 				}
 				
 				
 				
-			}*/
-			$arr = array(
-    array(
-        "region" => "valore",
-        "price" => "valore2"
-    ),
-    array(
-        "region" => "valore",
-        "price" => "valore2"
-    ),
-    array(
-        "region" => "valore",
-        "price" => "valore2"
-    )
-);
-			echo json_encode($arr);
+			}
             echo json_encode($response);
         } else {
             // user not found
