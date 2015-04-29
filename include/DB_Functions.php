@@ -87,9 +87,6 @@ class DB_Functions {
 			print $arr[1][1];
 			print $arr[1][2];
 			
-			print $arr[2][0];
-			print $arr[2][1];
-			print $arr[2][2];
 			return $arr;//$result;
 		}
 		else{
