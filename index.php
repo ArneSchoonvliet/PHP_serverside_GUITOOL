@@ -114,4 +114,18 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 }
 ?>
 
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<form action="" method="POST">
+			<input type='text' name="tag"/>
+			<input type="text" name="uid" />
+			<input type="text" name="name" />
+			<input type="text" name="password" />
+			<input type='submit' value="Submit" />
+		</form>
+	</body>
+</html>
 
