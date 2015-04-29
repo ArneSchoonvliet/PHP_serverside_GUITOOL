@@ -78,11 +78,10 @@ class DB_Functions {
 			$tel++;
 			while ($line = mysql_fetch_array($result))
 			{
-				
 				$arr[$tel]=$line;
 				$tel++;
 			}
-			print $arr[0];
+			print $arr[0][0];
 			return json_encode($arr);//$result;
 		}
 		else{

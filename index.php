@@ -42,7 +42,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             $response["user"]["updated_at"] = $user["updated_at"];
 			
 		 //$db->getUserSessionDataFromId($user["uid"]);
-			/*$session = $db->getUserSessionDataFromId($user["uid"]);
+			$session = $db->getUserSessionDataFromId($user["uid"]);
 			
 			if($session != false){
 				$response["session"]["sid"] = $session["sid"];
@@ -52,8 +52,8 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 				$response["session"]["altitude"] = $session["altitude"];
 				$response["session"]["duration"] = $session["duration"];
 				
-			}*/
-            echo json_encode($response);
+			}
+            //echo json_encode($response);
         } else {
             // user not found
             // echo json with error = 1
