@@ -90,8 +90,8 @@ class DB_Functions {
 			print $arr[2][1];
 			print $arr[2][2];
 			
-			
-			return json_encode($arr);//$result;
+			return $arr;
+			//return json_encode($arr);//$result;
 		}
 		else{
 			//no session data of user
