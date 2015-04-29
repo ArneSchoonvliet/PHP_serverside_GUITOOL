@@ -73,14 +73,13 @@ class DB_Functions {
 //			$result = mysql_fetch_array($result);
 			
 			$arr = array();
-			$tel = 0;
-			//$arr[$tel]="hallo";
+			
 			
 			while ($line = mysql_fetch_array($result))
 			{
 			
-				$arr[$tel]=$line;
-				$tel++;
+				$arr[]=$line;
+				
 			}
 			
 			

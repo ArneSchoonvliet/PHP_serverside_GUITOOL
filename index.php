@@ -43,9 +43,10 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 			
 		 //$db->getUserSessionDataFromId($user["uid"]);
 			$session = $db->getUserSessionDataFromId($user["uid"]);
-			print $session;
+			print count($session);
 			if($session != false){
-				for ($i=0; $i < count($session); $i++) { 
+				for ($i=0; $i < count($session); $i++) {
+					print $i; 
 				$response["session"]["sid"] = $session[$i]["sid"];
 				$response["session"]["place"] = $session[$i]["place"];
 				$response["session"]["description"] = $session[$i]["description"];
