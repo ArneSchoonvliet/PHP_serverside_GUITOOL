@@ -1,5 +1,4 @@
 <?php
-echo "test";
 /**
  * File to handle all API requests
  * Accepts GET and POST
@@ -46,7 +45,6 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 			print count($session);
 			if($session != false){
 				for ($i=0; $i < count($session); $i++) {
-					print $i; 
 				$response["session"][$i]["sid"] = $session[$i]["sid"];
 				$response["session"][$i]["place"] = $session[$i]["place"];
 				$response["session"][$i]["description"] = $session[$i]["description"];
@@ -54,9 +52,6 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 				$response["session"][$i]["altitude"] = $session[$i]["altitude"];
 				$response["session"][$i]["duration"] = $session[$i]["duration"];
 				}
-				
-				
-				
 			}
             echo json_encode($response);
         } else {
@@ -118,7 +113,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
     echo "Access Denied";
 }
 ?>
-
+<!--
 <html>
 	<head>
 		
@@ -133,4 +128,5 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 		</form>
 	</body>
 </html>
+-->
 
