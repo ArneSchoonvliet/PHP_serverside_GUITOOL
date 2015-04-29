@@ -53,7 +53,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 				$response["session"]["duration"] = $session["duration"];
 				
 			}
-            //echo json_encode($response);
+            echo json_encode($response);
         } else {
             // user not found
             // echo json with error = 1

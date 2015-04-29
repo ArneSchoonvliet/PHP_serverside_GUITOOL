@@ -78,7 +78,7 @@ class DB_Functions {
 			$tel++;
 			while ($line = mysql_fetch_array($result))
 			{
-				print $line;
+				print $line[];
 				$arr[$tel]=$line;
 				$tel++;
 			}
@@ -86,7 +86,11 @@ class DB_Functions {
 			print $arr[1][0];
 			print $arr[1][1];
 			print $arr[1][2];
-			return json_encode($arr);//$result;
+			
+			print $arr[2][0];
+			print $arr[2][1];
+			print $arr[2][2];
+			return $arr;//$result;
 		}
 		else{
 			//no session data of user
