@@ -106,11 +106,12 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 				$response["session"][$i]["altitude"] = $session[$i]["altitude"];
 				$response["session"][$i]["duration"] = $session[$i]["duration"];
 			}
+			echo json_encode($response);
 		}
 		else{
 			echo "hier zit de fout";
 		}
-		echo json_encode($response);
+		
 		
 	} else if ($tag == 'delete') {
 		$uid = $_POST['uid'];
