@@ -38,6 +38,15 @@ class DB_Functions {
             return false;
         }
     }
+	
+	public function storeSession($uid, $place, $description, $date, $altitude, $duration){
+		$result = mysql_query("INSERT INTO session(uid, place, description, datum, altitude, duration) 
+		VALUES('$uid', '$place', '$description', '$datum', '$altitude', '$duration')");
+		
+		if($result){
+			return getUserSessionData($uid);
+		}
+	}
 
     /**
      * Get user by name and password
@@ -70,20 +79,13 @@ class DB_Functions {
 		$no_of_rows = mysql_num_rows($result);
 		if($no_of_rows > 0)
 		{
-//			$result = mysql_fetch_array($result);
-			
 			$arr = array();
-			
-			
 			while ($line = mysql_fetch_array($result))
 			{
 			
 				$arr[]=$line;
 				
 			}
-			
-			
-			
 			return $arr;
 		}
 		else{
