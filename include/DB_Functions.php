@@ -43,7 +43,7 @@ class DB_Functions {
 		$result = mysql_query("INSERT INTO session(uid, place, description, datum, altitude, duration) 
 		VALUES('$uid', '$place', '$description', '$datum', '$altitude', '$duration')");
 		if($result){
-			
+			echo "werkt da?"
 			return getUserSessionData($uid);
 		}
 	}
