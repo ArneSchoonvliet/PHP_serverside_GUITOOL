@@ -43,8 +43,8 @@ class DB_Functions {
 	}
 
 	public function storeSession($uid, $place, $description, $altitude, $duration) {
-		$result = mysql_query("INSERT INTO session(uid, place, description, NOW(), altitude, duration) 
-		VALUES('$uid', '$place', '$description', '$altitude', '$duration')");
+		$result = mysql_query("INSERT INTO session(uid, place, description, datum, altitude, duration) 
+		VALUES('$uid', '$place', '$description', NOW() ,'$altitude', '$duration')");
 		if ($result) {
 			$arr = $this -> getUserSessionDataFromId($uid);
 			return $arr;
