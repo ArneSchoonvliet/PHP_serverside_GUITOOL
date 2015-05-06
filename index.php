@@ -131,21 +131,3 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 }
 ?>
 
-<html>
-	<head>
-		
-	</head>
-	<body>
-		<form action="" method="POST">
-			<input type='text' name="tag"/>
-			<input type="text" name="uid" />
-			<input type="text" name="place" />
-			<input type="text" name="description" />
-			<input type="text" name="date" />
-			<input type="text" name="altitude" />
-			<input type="text" name="duration" />
-			<input type='submit' value="Submit" />
-		</form>
-	</body>
-</html>
-
