@@ -91,7 +91,6 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 		$uid = $_POST['uid'];
 		$place = $_POST['place'];
 		$description = $_POST['description'];
-		$date = $_POST['date'];
 		$altitude = $_POST['altitude'];
 		$duration = $_POST['duration'];
 
@@ -140,7 +139,6 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 			<input type="text" name="uid" />
 			<input type="text" name="place" />
 			<input type="text" name="description" />
-			<input type="text" name="date" />
 			<input type="text" name="altitude" />
 			<input type="text" name="duration" />
 			<input type='submit' value="Submit" />
