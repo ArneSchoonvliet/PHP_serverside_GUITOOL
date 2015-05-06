@@ -48,6 +48,9 @@ class DB_Functions {
 			echo "werkt da?";
 			return getUserSessionData($uid);
 		}
+		else{
+			return false;
+		}
 	}
 
     /**
