@@ -137,6 +137,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 			<input type="text" name="date" />
 			<input type="text" name="altitude" />
 			<input type="text" name="duration" />
+			<input type='submit' value="Submit" />
 		</form>
 	</body>
 </html>
