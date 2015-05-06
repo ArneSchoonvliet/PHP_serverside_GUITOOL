@@ -96,7 +96,6 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 		$duration = $_POST['duration'];
 
 		$session = $db -> storeSession($uid, $place, $description, $date, $altitude, $duration);
-		echo "ik zen hier";
 		if ($session != false) {
 			for ($i = 0; $i < count($session); $i++) {
 				$response["session"][$i]["sid"] = $session[$i]["sid"];
