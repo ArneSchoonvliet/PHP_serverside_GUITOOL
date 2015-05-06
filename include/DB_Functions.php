@@ -42,8 +42,10 @@ class DB_Functions {
 	public function storeSession($uid, $place, $description, $date, $altitude, $duration){
 		$result = mysql_query("INSERT INTO session(uid, place, description, datum, altitude, duration) 
 		VALUES('$uid', '$place', '$description', '$datum', '$altitude', '$duration')");
+		echo "werkt da?";
+		echo $result;
 		if($result){
-			echo "werkt da?"
+			echo "werkt da?";
 			return getUserSessionData($uid);
 		}
 	}
