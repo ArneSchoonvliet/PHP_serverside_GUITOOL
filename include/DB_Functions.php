@@ -46,8 +46,8 @@ class DB_Functions {
 		echo $result;
 		if($result){
 			echo "werkt da?";
-			$arr = getUserSessionData($uid);
-			return $arr;
+			return getUserSessionDataFromId($uid);
+			
 		}
 		else{
 			return false;
