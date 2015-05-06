@@ -95,7 +95,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 		$altitude = $_POST['altitude'];
 		$duration = $_POST['duration'];
 
-		$session = $db -> storeSession($uid, $place, $description, $date, $altitude, $duration);
+		$session = $db -> storeSession($uid, $place, $description, $altitude, $duration);
 		if ($session != false) {
 			for ($i = 0; $i < count($session); $i++) {
 				$response["session"][$i]["sid"] = $session[$i]["sid"];
@@ -130,4 +130,20 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 	echo "Access Denied";
 }
 ?>
-
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<form action="" method="POST">
+			<input type='text' name="tag"/>
+			<input type="text" name="uid" />
+			<input type="text" name="place" />
+			<input type="text" name="description" />
+			<input type="text" name="date" />
+			<input type="text" name="altitude" />
+			<input type="text" name="duration" />
+			<input type='submit' value="Submit" />
+		</form>
+	</body>
+</html>
